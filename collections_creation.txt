@@ -1,0 +1,17 @@
+use globalSports-union
+
+db.createCollection("pais")
+
+db.createCollection("delegacion")
+
+db.createCollection("historial")
+
+db.createCollection("equipo")
+
+db.createCollection("atleta")
+
+db.createCollection("disciplina")
+
+db.createCollection("competencias")
+
+db.createCollection("resultados")
