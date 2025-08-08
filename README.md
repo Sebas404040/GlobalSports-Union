@@ -34,14 +34,21 @@ Puede hacerlo de dos formas:
 
 encontrara los archivos de:
 
-- Queries: que son las consultas avanzadas del repositoro
+- Queries: que son las consultas avanzadas del repositoro.
 
-- Simple Queries: consultas simples de los datos
+- Simple Queries: consultas simples de los datos.
 
-- Modelado.md: Explicacion profunda del modelado
+- Modelado.md: Explicacion profunda del modelado.
 
-- Readme_images: Fotos y capturas de pantalla
+- Readme_images: Fotos y capturas de pantalla.
 
-- 
+- collections_creations: creacion de colecciones y base de datos.
+
+- Insertions: todas las inserciones de los datos a las colecciones.
+
+## 🧑‍🦱 Autor
+
+**Joan Sebastian Gómez Serrano**
+
 
 
