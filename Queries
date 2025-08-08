@@ -1,0 +1,34 @@
+// Equipos con mas de 3 atletas
+// Uso $expr para poder añadir expresiones de agregacion en la consulta, y "$atletas" para indicar a mongo que tome el valor de atletas
+db.equipo.find({ $expr: { $gt: [{ $size: "$atletas"}, 3]}})
+
+// Consulta de delegaciones creadas entre el 1 de enero de 2018 y el 31 de diciembre de 2020
+// Use $gte y $lte para indicar el rango de fechas
+db.delegacion.find({fecha_creacion: {$gte: new Date("2018-01-01"),$lte: new Date("2020-12-31")}})
+
+// Consulta de delegaciones creadas despues del 1 de enero de 2020
+db.delegacion.find({fecha_creacion: { $gt: new Date("2020-01-01") }})
+
+// Consulta de delegaciones que son de brasil o de argentina
+db.delegacion.find({$or: [{ id_pais: "BRA" }, { id_pais: "ARG" }]})
+
+// Equipos que tienen solo 2 atletas
+// aqui hago lo mismo que la primera consulta, usando $expr y $size para contar el numero de atletas
+db.equipo.find({$expr: { $eq: [{ $size: "$atletas" }, 2] }})
+
+// Equipos que tienen la disciplina de Boxeo, Judo o Taekwondo
+db.equipo.find({id_disciplina: { $in: ["BOX", "JUD", "TAE"] }})
+
+// Competencias que fueron realizadas despues del 3 de agosto de 2025
+db.competencias.find({fecha: { $gt: new Date("2025-08-03") }})
+
+// Competencias que no son de las disciplinas de Remo, Ciclismo o Natacion
+db.competencias.find({disciplina_id: { $nin: ["ROW", "CYC", "SWI"] }})
+
+// Competencias entre la competencia COMP05 y COMP10
+db.resultados.find({id_competencia: { $gte: "COMP05", $lte: "COMP10" }})
+
+// Competencia de id COMP01, COMP05 y COMP10
+db.resultados.find({id_competencia: { $in: ["COMP01", "COMP05", "COMP10"] }})
+
+
